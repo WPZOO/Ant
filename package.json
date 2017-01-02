@@ -1,0 +1,78 @@
+{
+	"name": "ant",
+	"capitalname": "Ant",
+	"description": "Ant Starter Theme by WPZOO",
+	"author": "Stefan Brechbühl",
+	"homepage": "https://wpzoo.ch/en/",
+	"version": "1.0.0",
+	"copyright": "2016",
+	"license": "GPL-2.0+",
+	"private": true,
+	"contributors": [
+		{
+			"name": "WPZOO",
+			"url": "wpzoo.ch"
+		},
+		{
+			"name": "Stefan Brechbühl",
+			"url": "pixelstrol.ch"
+		},
+		{
+			"name": "Ulrich Pogson",
+			"url": "ulrich.pogson.ch"
+		}
+	],
+	"directories": {
+		"js": "./js",
+		"sass": "./sass",
+		"css": "",
+		"build": "./build",
+		"lite": "../penguin/"
+	},
+	"theme": {
+		"name": "AntStarterTheme",
+		"uri": "http://wpzoo.ch/themes/penguin/",
+		"description": "Ant Starter Theme by WPZOO",
+		"author": "WPZOO",
+		"authoruri": "http://wpzoo.ch",
+		"license": "GPL-2.0+",
+		"licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+		"textdomain": "ant_theme",
+		"domainpath": "/languages",
+		"tags": "one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, accessibility-ready, buddypress, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio"
+	},
+	"bugs": {
+		"url": "https://github.com/WPZOO/Ant/issues",
+		"email": "support@wpzoo.ch"
+	},
+	"pot": {
+		"reportmsgidbugsto": "WPZOO Translations <translations@wpzoo.ch>",
+		"lasttranslator": "WPZOO Translations <translations@wpzoo.ch>",
+		"languageteam": "WPZOO Translations <translations@wpzoo.ch>",
+		"type": "wp-theme"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/WPZOO/penguin-gold.git"
+	},
+	"devDependencies": {
+		"autoprefixer":           "*",
+		"grunt":                  "*",
+		"grunt-banner":           "*",
+		"grunt-checktextdomain":  "*",
+		"grunt-contrib-copy":     "*",
+		"grunt-contrib-cssmin":   "*",
+		"grunt-contrib-imagemin": "*",
+		"grunt-contrib-sass":     "*",
+		"grunt-contrib-uglify":   "*",
+		"grunt-contrib-watch":    "*",
+		"grunt-exec":             "*",
+		"grunt-newer":            "*",
+		"grunt-replace":          "*",
+		"grunt-rtlcss":           "*",
+		"grunt-wp-css":           "*",
+		"grunt-wp-i18n":          "*",
+		"grunt-postcss":          "*",
+		"load-grunt-config":      "*"
+	}
+}
