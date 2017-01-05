@@ -50,6 +50,13 @@ function ant_theme_setup() {
 	// Enable support for post thumbnails.
 	add_theme_support( 'post-thumbnails' );
 
+	// Enable support for custom logo.
+	add_theme_support( 'custom-logo', array(
+		'height'     => 200,
+		'flex-width' => true,
+		'header-text' => array( 'site-title' ),
+	) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
