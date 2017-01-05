@@ -128,6 +128,47 @@ function ant_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'ant_theme_scripts' );
 
 /**
+ * Read more text
+ */
+function ant_theme_read_more_text() {
+	$read_more_text = sprintf(
+		wp_kses(
+			/* translators: %s: Name of current post */
+			__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ant_theme' ),
+			array(
+				'span' => array(
+					'class' => array()
+				)
+			)
+		),
+		the_title( '<span class="screen-reader-text">"', '"</span>', false )
+	);
+	return apply_filters( 'ant_theme_read_more_text', $read_more_text );
+}
+
+/**
+ * Excerpt continue reading link
+ */
+function ant_theme_excerpt_read_more_link( $output ) {
+	if ( is_admin() ) {
+		return;
+	}
+	if ( ! is_attachment() ) {
+		$output .= '<a href="'. esc_url( get_permalink() ) . '" class="read-more-link">' . ant_theme_read_more_text() . '</a>';
+	}
+	return $output;
+}
+add_filter( 'the_excerpt', 'ant_theme_excerpt_read_more_link' );
+
+/**
+ * Excerpt more
+ */
+function ant_theme_excerpt_more( $more ) {
+	return ' &#8230;';
+}
+add_filter( 'excerpt_more', 'ant_theme_excerpt_more' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
