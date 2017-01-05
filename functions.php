@@ -47,6 +47,9 @@ function ant_theme_setup() {
 		'menu-1' => esc_html__( 'Primary', 'ant_theme' ),
 	) );
 
+	// Enable support for post thumbnails.
+	add_theme_support( 'post-thumbnails' );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
