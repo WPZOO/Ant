@@ -62,6 +62,25 @@ function ant_theme_customize_register( $wp_customize ) {
 			'choices' => $choices['excerpt-content'],
 		)
 	);
+
+	$wp_customize->add_setting(
+		'sidebar-layout',
+		array(
+			'default'           => 'last-sm',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'ant_theme_sanitize_choices',
+		)
+	);
+
+	$wp_customize->add_control(
+		'sidebar-layout',
+		array(
+			'label'   => __( 'Sidebar layout', 'ant_theme-gold' ),
+			'section' => 'content',
+			'type'    => 'radio',
+			'choices' => $choices['sidebar-layout'],
+		)
+	);
 }
 add_action( 'customize_register', 'ant_theme_customize_register' );
 
@@ -87,6 +106,14 @@ function ant_theme_option_choices() {
 		'excerpt' => __( 'Excerpt (trimmed-down output)', 'ant_theme' ),
 		'content' => __( 'Content (full post / custom more tag)', 'ant_theme' ),
 	);
+
+	$choices['sidebar-layout'] = array(
+		'last-sm' => __( 'Sidebar right', 'ant_theme' ),
+		'first-sm'  => __( 'Sidebar left', 'ant_theme' ),
+	);
+
+	return $choices;
+}
 
 function ant_theme_sanitize_checkbox( $value ) {
 	if ( 1 == $value ) {
