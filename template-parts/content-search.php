@@ -20,9 +20,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	<?php get_template_part( 'template-parts/_the_excerpt' ); ?>
 
 	<footer class="entry-footer">
 		<?php ant_theme_entry_footer(); ?>

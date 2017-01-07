@@ -11,6 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function ant_theme_customize_register( $wp_customize ) {
+	$choices = ant_theme_option_choices();
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -34,6 +36,32 @@ function ant_theme_customize_register( $wp_customize ) {
 		);
 	}
 
+	$wp_customize->add_section(
+		'content',
+		array(
+			'title'    => __( 'Content & Layout', 'ant_theme' ),
+			'priority' => 110,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'excerpt-content',
+		array(
+			'default'           => 'excerpt',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'ant_theme_sanitize_choices',
+		)
+	);
+
+	$wp_customize->add_control(
+		'excerpt-content',
+		array(
+			'label'   => __( 'Visible post length on home or archive pages', 'ant_theme' ),
+			'section' => 'content',
+			'type'    => 'radio',
+			'choices' => $choices['excerpt-content'],
+		)
+	);
 }
 add_action( 'customize_register', 'ant_theme_customize_register' );
 
@@ -53,6 +81,12 @@ function ant_theme_customize_partial_blogname() {
 function ant_theme_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
+
+function ant_theme_option_choices() {
+	$choices['excerpt-content'] = array(
+		'excerpt' => __( 'Excerpt (trimmed-down output)', 'ant_theme' ),
+		'content' => __( 'Content (full post / custom more tag)', 'ant_theme' ),
+	);
 
 function ant_theme_sanitize_checkbox( $value ) {
 	if ( 1 == $value ) {
