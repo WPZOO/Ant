@@ -3,20 +3,20 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: $color__border-button;
+	border-color: $oc-gray-4 $oc-gray-4 $oc-gray-6;
 	border-radius: 3px;
-	background: $color__background-button;
+	background: $oc-gray-3;
 	color: rgba(0, 0, 0, .8);
 	@include font-size(0.75);
 	line-height: 1;
 	padding: .6em 1em .4em;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		border-color: $oc-gray-4 $oc-gray-5 $oc-gray-6;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: $oc-gray-6 $oc-gray-5 $oc-gray-5;
 	}
 }

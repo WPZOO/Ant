@@ -1,13 +1,13 @@
 a {
-	color: $color__link;
+	color: $oc-blue-7;
 
 	&:visited {
-		color: $color__link-visited;
+		color: $oc-violet-8;
 	}
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $oc-blue-9;
 	}
 	&:focus {
 		outline: thin dotted;
